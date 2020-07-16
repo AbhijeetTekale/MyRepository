@@ -72,6 +72,7 @@
         android:id="@+id/prgsUP"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:visibility="gone"
         android:layout_below="@+id/btnSignUp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"/>
