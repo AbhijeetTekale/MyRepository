@@ -46,7 +46,6 @@ class MainActivity : AppCompatActivity() {
                     if(task.isSuccessful)
                     {
                         var User = Auth.getCurrentUser()
-                        User?.isEmailVerified()
                         startActivity(Intent(this,SignIn::class.java))
                         Toast.makeText(this,"Sign in successful",Toast.LENGTH_SHORT).show()
                     }
