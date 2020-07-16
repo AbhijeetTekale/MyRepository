@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignIn">
+    tools:context=".SignUP">
     <TextView
         android:id="@+id/txtTitle"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="Sign In"
+        android:text="Sign Up"
         android:textAlignment="center"
         android:textSize="25dp"
         android:textStyle="bold"
@@ -25,7 +25,7 @@
         android:layout_marginTop="50dp"
         android:src="@drawable/user"/>
     <EditText
-        android:id="@+id/InUser"
+        android:id="@+id/edtUser"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:layout_below="@+id/ImgUser"
@@ -36,43 +36,53 @@
         android:textSize="20dp"
         />
     <EditText
-        android:id="@+id/InPass"
+        android:id="@+id/edtPass"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:layout_below="@+id/InUser"
+        android:layout_below="@+id/edtUser"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:hint="Password"
         android:textAlignment="center"
         android:textSize="20dp"
         />
-    />
+    <EditText
+        android:id="@+id/edtRepass"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/edtPass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:hint="Retype Password"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        />
     <Button
-        android:id="@+id/btnSignIn"
+        android:id="@+id/btnSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/SkyBlue"
-        android:layout_below="@id/InPass"
+        android:layout_below="@id/edtRepass"
         android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
-        android:text="Sign In"
+        android:text="Sign Up"
         android:textStyle="bold"
         />
     <ProgressBar
-        android:id="@+id/prgsIn"
+        android:id="@+id/prgsUP"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/btnSignIn"
+        android:layout_below="@+id/btnSignUp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"/>
 
     <Button
-        android:id="@+id/btnCreate"
+        android:id="@+id/btnAlready"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
-        android:text="Create An Account..."
+        android:text="Already have an Account..."
         android:textAlignment="center" />
 
 </RelativeLayout>

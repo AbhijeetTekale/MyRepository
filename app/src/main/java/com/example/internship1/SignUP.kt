@@ -3,18 +3,18 @@ package com.example.internship1
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_sign_in.*
+import kotlinx.android.synthetic.main.activity_sign_up.*
 
-class MainActivity : AppCompatActivity() {
+class SignUP : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        btnCreate.setOnClickListener {
-            val intent = Intent(this,SignUP::class.java)
+        setContentView(R.layout.activity_sign_up)
+        btnAlready.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
-    }
 
+    }
 }
