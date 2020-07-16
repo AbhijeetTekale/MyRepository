@@ -51,6 +51,14 @@ class SignUP : AppCompatActivity() {
                     OnCompleteListener { task ->
                         if(task.isSuccessful)
                         {
+                            val user = Auth.getCurrentUser()
+                            user?.sendEmailVerification()?.addOnCompleteListener { task ->
+                                if(task.isSuccessful)
+                                    Toast.makeText(this,"Email sent successfully",Toast.LENGTH_SHORT).show()
+                                else
+                                    Toast.makeText(this,"Email not sent",Toast.LENGTH_SHORT).show()
+
+                            }
                             Toast.makeText(this,"User Registered Successfully",Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this,MainActivity :: class.java))
                         }

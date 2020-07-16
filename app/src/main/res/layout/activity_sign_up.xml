@@ -42,6 +42,7 @@
         android:layout_below="@+id/edtUser"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
+        android:inputType="textPassword"
         android:hint="Password"
         android:textAlignment="center"
         android:textSize="20dp"
@@ -53,7 +54,8 @@
         android:layout_below="@+id/edtPass"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:hint="Retype Password"
+        android:hint="Conform Password"
+        android:inputType="textPassword"
         android:textAlignment="center"
         android:textSize="20dp"
         />
