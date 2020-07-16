@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
@@ -45,9 +46,22 @@ class MainActivity : AppCompatActivity() {
                 OnCompleteListener { task ->
                     if(task.isSuccessful)
                     {
-                        var User = Auth.getCurrentUser()
-                        startActivity(Intent(this,SignIn::class.java))
-                        Toast.makeText(this,"Sign in successful",Toast.LENGTH_SHORT).show()
+                        var User:FirebaseUser? = Auth.getCurrentUser()
+                        if(User == null)
+                        {
+                            Toast.makeText(this, "Error occured", Toast.LENGTH_SHORT).show()
+                        }
+                        else
+                           if(User.isEmailVerified) {
+                               startActivity(Intent(this, SignIn::class.java))
+                               finish()
+                               Toast.makeText(this, "Sign in successful", Toast.LENGTH_SHORT).show()
+                           }
+                           else
+                           {
+                               Toast.makeText(this, "Please Verify Email", Toast.LENGTH_SHORT).show()
+                               User.sendEmailVerification()
+                           }
                     }
                     else
                     {
@@ -55,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 })
         }
-        prgsIn.visibility = View.GONE
+        prgsIn.visibility = View.VISIBLE
     }
 
 }

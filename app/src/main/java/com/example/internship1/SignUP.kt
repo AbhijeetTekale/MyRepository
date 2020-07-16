@@ -61,6 +61,7 @@ class SignUP : AppCompatActivity() {
                             }
                             Toast.makeText(this,"User Registered Successfully",Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this,MainActivity :: class.java))
+                            finish()
                         }
                         else
                         {
